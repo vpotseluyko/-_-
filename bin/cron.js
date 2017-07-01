@@ -18,6 +18,7 @@ const minute_cron = async () => {
             try {
                 const exams = await request(res.series, res.number);
                 const previous = await redis.get(res.chatid + '_res');
+                console.log(JSON.stringify(exams) + res.mail);
                 if (exams.length !== +previous) {
                     console.log('send message to ' + res.chatid);
                     console.log(JSON.stringify(exams));
@@ -32,7 +33,8 @@ const minute_cron = async () => {
         console.log(err);
     }
 };
-
+minute_cron()
+    .catch(console.log);
 module.exports.minute = minute_cron;
 
 const day_cron = async () => {
