@@ -18,7 +18,7 @@ const send_request = async (series, number) => {
     try {
 
         const options = {
-            url: "http://www.ege.spb.ru/result/index.php?mode=ege2017&wave=2",
+            url: "http://www.ege.spb.ru/result/index.php?mode=ege2018&wave=1",
             encoding: 'binary',
             form: {
                 Series: series,
